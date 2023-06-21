@@ -1,4 +1,4 @@
-name: Website Deployment
+name: use-reuse
 on:
   push:
     branches:
@@ -34,7 +34,7 @@ jobs:
         run: npm ci
       - name: Test code
         id: run-tests
-        run: npm run tst
+        run: npm run test
       - name: Upload test report
         if: failure() && steps.run-tests.outcome == 'failure'
         uses: actions/upload-artifact@v3
